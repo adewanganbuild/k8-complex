@@ -13,3 +13,12 @@ after_success:
   - docker build -t ad/multi-nginx ./nginx
   - docker build -t ad/multi-server ./server
   - docker build -t ad/multi-worker ./worker
+  # In Travis, Setup environment variables for login password @Settings
+  # DOCKER_ID, DOCKER_PASSWORD.
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push ad/multi-client
+  - docker push ad/multi-nginx
+  - docker push ad/multi-server
+  - docker push ad/multi-worker
