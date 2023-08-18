@@ -6,3 +6,10 @@ Notes:
 
 To Combine Configuration files use --- as the separator.
 
+docker run -it -v ${pwd}:/app ruby:2.3 sh
+
+gem install travis --no-rdoc --no-ri
+
+travis encrypt-file service-account.json -r adewanganbuild/k8-complex
+
+Add encrypted service_account.json.enc file
