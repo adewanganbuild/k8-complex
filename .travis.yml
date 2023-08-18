@@ -9,4 +9,8 @@ before_install:
   - gcloud config set project skilful-berm-214822
   - glcoud config set compute/zone us-central-a
   - glcoud container clusters get-credentials multi-cluster
-  
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNMAE" --password-stdin
+  - docker build -t ashishdlearn/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run ashishdlearn/react-test npm test -- -- coverage
