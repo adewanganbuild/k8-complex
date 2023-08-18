@@ -13,3 +13,6 @@ gem install travis --no-rdoc --no-ri
 travis encrypt-file service-account.json -r adewanganbuild/k8-complex
 
 Add encrypted service_account.json.enc file
+
+Travis does not have built in support for kubernetes, hence use custom script.
+
