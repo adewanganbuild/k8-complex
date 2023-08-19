@@ -20,7 +20,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React - Kubernetes
+            Fun with React - Kubernetes
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">My Other Page</Link>
